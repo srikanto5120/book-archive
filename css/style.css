@@ -1,0 +1,13 @@
+body {
+  background-color: #d7e5ec94;
+}
+.height {
+  height: 250px;
+}
+.show-cards {
+  margin-top: 70px;
+  height: 80vh;
+  border-radius: 10px;
+  border: 2px solid rgb(21, 25, 26);
+  overflow-y: scroll;
+}
