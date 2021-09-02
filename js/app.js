@@ -8,7 +8,7 @@ const button = document.getElementById("button");
 button.addEventListener("click", () => {
   // spinner
   cardContainer.innerHTML = `
-  <div class="  spinner d-flex justify-content-end text-primary">
+  <div class="  spinner d-flex justify-content-center text-primary">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
@@ -50,6 +50,7 @@ function loadData(books) {
     // cardContainer.innerHTML = "";
     searchResult.innerText = "";
     erorMsg.innerHTML = "Not found";
+    cardContainer.innerHTML = "";
     cardContainer.classList.remove("show-cards");
     cardContainer.appendChild(erorMsg);
   } else {
@@ -58,7 +59,7 @@ function loadData(books) {
       const div = document.createElement("div");
       cardContainer.classList.add("show-cards");
       div.innerHTML = `
-        <div class="col">
+        <div class="col single-card shadow rounded ">
         <div class="card">
         <img   class=" height img-fluid" src="https://covers.openlibrary.org/b/id/${book.cover_i}.jpg" class="card-img-top" alt="...">
           <div class="card-body">
