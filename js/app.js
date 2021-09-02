@@ -6,13 +6,22 @@ const erorMsg = document.createElement("h4");
 const button = document.getElementById("button");
 // click event
 button.addEventListener("click", () => {
+  // spinner
+  cardContainer.innerHTML = `
+  <div class="  spinner d-flex justify-content-end text-primary">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+  `;
   searchResult.innerText = "";
   const inputText = input.value;
   erorMsg.classList.add("text-center", "text-danger");
   erorMsg.innerHTML = "";
-  cardContainer.innerHTML = "";
+
   //error handeling
   if (inputText === "") {
+    cardContainer.innerHTML = "";
     erorMsg.innerHTML = "Enter valid input";
     cardContainer.classList.remove("show-cards");
     cardContainer.appendChild(erorMsg);
@@ -38,11 +47,13 @@ function loadData(books) {
 
   searchResult.innerText = `Search Result: ${newArr.length}`;
   if (newArr.length === 0) {
+    // cardContainer.innerHTML = "";
     searchResult.innerText = "";
     erorMsg.innerHTML = "Not found";
     cardContainer.classList.remove("show-cards");
     cardContainer.appendChild(erorMsg);
   } else {
+    cardContainer.innerHTML = "";
     newArr.forEach((book) => {
       const div = document.createElement("div");
       cardContainer.classList.add("show-cards");
