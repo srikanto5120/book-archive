@@ -1,13 +1,17 @@
 body {
-  background-color: #d7e5ec94;
+  background-color: #e1dcc5;
+}
+
+.logo-img {
+  width: 100px;
 }
 .height {
   height: 250px;
 }
 .show-cards {
-  margin-top: 70px;
+  margin-top: 40px;
   height: 80vh;
   border-radius: 10px;
-  border: 2px solid rgb(21, 25, 26);
+  border: 1px solid rgba(57, 67, 70, 0.344);
   overflow-y: scroll;
 }
