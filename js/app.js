@@ -6,6 +6,7 @@ const erorMsg = document.createElement("h4");
 const button = document.getElementById("button");
 // click event
 button.addEventListener("click", () => {
+  searchResult.innerText = "";
   const inputText = input.value;
   erorMsg.classList.add("text-center", "text-danger");
   erorMsg.innerHTML = "";
