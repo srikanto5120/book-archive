@@ -1,6 +1,7 @@
 // DOM id select
 const input = document.getElementById("search-input");
 const cardContainer = document.getElementById("card-container");
+const searchResult = document.getElementById("search-result");
 const erorMsg = document.createElement("h4");
 const button = document.getElementById("button");
 // click event
@@ -16,7 +17,7 @@ button.addEventListener("click", () => {
     cardContainer.appendChild(erorMsg);
   } else {
     erorMsg.innerHTML = "";
-    const url = `http://openlibrary.org/search.json?q=${inputText};`;
+    const url = `https://openlibrary.org/search.json?q=${inputText};`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => loadData(data.docs));
@@ -33,9 +34,10 @@ function loadData(books) {
       book.publisher !== undefined &&
       book.publish_year !== undefined
   );
-  const searchResult = document.getElementById("search-result");
+
   searchResult.innerText = `Search Result: ${newArr.length}`;
   if (newArr.length === 0) {
+    searchResult.innerText = "";
     erorMsg.innerHTML = "Not found";
     cardContainer.classList.remove("show-cards");
     cardContainer.appendChild(erorMsg);
